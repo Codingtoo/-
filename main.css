@@ -1,0 +1,58 @@
+body{
+    background-color: #1f1f1f;
+    display: flex;/*요소들을 평행하게 정의*/
+    justify-content: center;/*수평방향으로 중앙에맞춤*/
+    align-items: center;/*수직으로 중앙에 맞춤*/
+    height: 100vh; /*높이 정의*/
+}
+.calculator{
+    width: 276px;
+    border: 1px solid #333;
+    background-color: #ccc;
+    padding: 5px;
+}
+.calculator form{
+    display: grid;
+    grid-template-columns: repeat(4,65px);/*가로 4열에 길이 65px*/
+    grid-auto-rows: 65px;/*행의높이도 65px*/
+    grid-gap: 5px;/*간격을 5px로 설정*/
+}
+
+.calculator form input{
+    border: 2px solid #333;
+    cursor: pointer;/*마우스를 올리면 손가락모양으로 변한다*/
+    font-size: 19px;
+}
+.calculator form input:hover{
+    box-shadow: 1px 1px 2px #333;/*마우스를 가져다대면 그림자형태를 나타낸다*/
+}
+.calculator form .clear{
+    background-color: #ed4848;
+    grid-column: span 3;/*3개의 열을 합친다*/
+}
+.calculator form .operate{
+    background-color: #ffa500;
+}
+.calculator form .dot{
+    background-color: #008000;
+}
+.calculator form input[type="text"]{
+    grid-column: span 4;/*4개의 열을 합친다*/
+    text-align: right;/*입력한값이 오른쪽으로 정렬되기위해 설정*/
+    padding: 0 10px;/*여유공간을 10px로 설정*/
+}
+.calculator form .result{
+    grid-column: span 2;/*2개의 열을 합친다*/
+}
+/*
+부족한부분
+1.display속성 공부가 더 필요하다
+2. 왜 grid속성이 필요하다
+3.열을 합칠때 왜 span속성인이지?
+4. box-shadow속성 완벽하지는 않다
+알게된 부분
+1. cursor:pointer 가져다 대면 손가락모양으로 바뀐다
+2. 수평,수직으로 중앙에 맞추는것
+ex) justify-content: center
+    align-itmes:center 
+*/
